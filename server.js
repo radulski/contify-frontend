@@ -3,7 +3,12 @@ const app = express();
 
 app.use(express.static(__dirname + '/dist/contify-ui'));
 
-app.get('/*', function(req, res) {
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+
+app.get('/*', function (req, res) {
     res.sendFile(__dirname + '/dist/contify-ui/index.html');
 });
 
