@@ -1,0 +1,74 @@
+<div class="container mt-0 pb-3">
+    <ol class="breadcrumb p-1">
+        <li>
+            <a class="text-decoration-underline" href="#">Início</a>
+        </li>
+        <li class="text-muted">
+            Colaboradores
+        </li>
+    </ol>
+
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <div class="btn btn-success" routerLink="/{{tenantId}}/funcionarios/novo">Adicionar Colaborador</div>
+        </div>
+
+        <div class="form-group col-md-4">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Nome" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-white" type="button">
+                        <i class="material-icons md-18 align-middle">search</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table table-projects mb-0">
+                <thead>
+                    <tr>
+                        <th style='padding-left: 20px;'>Nome</th>
+                        <th>Admissão</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employee of employees">
+                        <td style='padding-left: 20px;'>{{ employee.name }}</td>
+                        <td>{{ employee.admissionDate | date: 'dd/MM/yyyy' }}</td>
+                        <td>
+                            <div class="dropdown show">
+                                <a class="btn btn-white btn-sm" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons md-18 align-middle">more_vert</i>
+                                </a>
+
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="material-icons md-14 align-middle">edit</i>
+                                        <span class="align-middle">Edit</span>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="material-icons md-14 align-middle">content_copy</i>
+                                        <span class="align-middle">Duplicate</span>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="material-icons md-14 align-middle">favorite_border</i>
+                                        <span class="align-middle">Mark as favourite</span>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-danger" href="#">
+                                        <i class="material-icons md-14 align-middle">delete</i>
+                                        <span class="align-middle">Delete</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

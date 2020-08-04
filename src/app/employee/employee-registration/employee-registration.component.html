@@ -1,0 +1,161 @@
+<div class="container mt-0 pb-3">
+    <ol class="breadcrumb p-2">
+        <li>
+            <a class="text-decoration-underline" href="#">Início</a>
+        </li>
+        <li>
+            <a class="text-decoration-underline" routerLink="/{{tenantId}}/funcionarios">Colaboradores</a>
+        </li>
+        <li class="text-muted">
+            Novo
+        </li>
+    </ol>
+
+    <form #f="ngForm" autocomplete="off" (ngSubmit)='salvar(f)'>
+        <div class="card">
+            <div class="card-body">
+                <div class="page-header">
+                    <h4 style="margin-bottom: 25px;">Colaborador</h4>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="inputEmail4">Nome</label>
+                        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="employee.name" (ngModelChange)="employee.name = $event.toUpperCase()" autofocus>
+                    </div>
+                </div>
+
+                <div class="page-header">
+                    <h5 style="margin-top: 20px; font-size: .975rem;">Dados da Admissão</h5>
+                    <hr style="margin-top: 0px;">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputEmail4">Data Admissão</label>
+                        <input type="text" id="admissionDate" name="admissionDate" [(ngModel)]="employee.admissionDate" [(bsConfig)]="datePickerConfig"
+                            placeholder="" class="form-control" bsDatepicker>
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputPassword4">Salário</label>
+                        <input type="text" class="form-control" id="salary" name="salary" [(ngModel)]="employee.salary" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+                        />
+                    </div>
+                </div>
+
+                <div class="page-header">
+                    <h6 style="margin-top: 20px; font-size: .875rem;">Carga Horária</h6>
+                    <hr style="margin-top: 0px;">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group input-group col-md-2">
+                        <label for="startTimeStartPeriodMonToFri">Segunda à Sexta</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Das</span>
+                            </div>
+                            <input type="text" class="form-control" id="startTimeStartPeriodMonToFri" name="startTimeStartPeriodMonToFri" mask="00:00"
+                                [(ngModel)]="employee.startTimeStartPeriodMonToFri" placeholder="00:00">
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group col-md-2">
+                        <label for="endTimeStartPeriodMonToFri">&nbsp;</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">às</span>
+                            </div>
+                            <input type="text" class="form-control" id="endTimeStartPeriodMonToFri" name="endTimeStartPeriodMonToFri" mask="00:00" [(ngModel)]="employee.endTimeStartPeriodMonToFri"
+                                placeholder="00:00">
+                        </div>
+                    </div>
+
+                    <span class="nav-item nav-divider-btn" style="margin-left: 10px; margin-right: 10px; margin-top: 8px;"></span>
+
+                    <div class="form-group input-group col-md-2">
+                        <label for="startTimeEndPeriodMonToFri">&nbsp;</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Das</span>
+                            </div>
+                            <input type="text" class="form-control" id="startTimeEndPeriodMonToFri" name="startTimeEndPeriodMonToFri" mask="00:00" [(ngModel)]="employee.startTimeEndPeriodMonToFri"
+                                placeholder="00:00">
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group col-md-2">
+                        <label for="endTimeEndPeriodMonToFri">&nbsp;</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">às</span>
+                            </div>
+                            <input type="text" class="form-control" id="endTimeEndPeriodMonToFri" name="endTimeEndPeriodMonToFri" mask="00:00" [(ngModel)]="employee.endTimeEndPeriodMonToFri"
+                                placeholder="00:00">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group input-group col-md-2">
+                        <label for="startTimeSaturday">Sábado</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Das</span>
+                            </div>
+                            <input type="text" class="form-control" id="startTimeSaturday" name="startTimeSaturday" mask="00:00" [(ngModel)]="employee.startTimeSaturday"
+                                placeholder="00:00">
+                        </div>
+                    </div>
+
+                    <div class="form-group input-group col-md-2">
+                        <label for="endTimeSaturday">&nbsp;</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">às</span>
+                            </div>
+                            <input type="text" class="form-control" id="endTimeSaturday" name="endTimeSaturday" mask="00:00" [(ngModel)]="employee.endTimeSaturday"
+                                placeholder="00:00">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-header">
+                    <h5 style="margin-top: 20px; font-size: .975rem;">Anexar Arquivos</h5>
+                    <hr style="margin-top: 0px;">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleFormControlFile1">RG ou CNH</label>
+                        <input type="file" (change)="inputFileChange($event)" class="form-control-file" id="file1">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="exampleFormControlFile1">Carteira de Trabalho</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleFormControlFile1">Comprovante de Residência</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row btn-footer">
+            <div class="col-sm-12">
+                <button style="width: 14%;" class="btn btn btn-primary float-right m-t-n-xs" type="submit">
+                    <strong>Salvar</strong>
+                </button>
+                <a style="width: 14%;" class="btn btn btn-white float-left m-t-n-xs" routerLink="/{{tenantId}}/funcionarios" aria-hidden="true" role="button">
+                    <strong> Voltar</strong>
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
