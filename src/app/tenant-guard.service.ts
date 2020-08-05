@@ -27,7 +27,7 @@ export class TenantGuardService implements CanActivate {
         // this.tenantService.pesquisar();
 
         // caso localize, salvar no localStorage
-        localStorage.setItem('tenantId', '6466db7a-2223-4b9d-ae15-0fd3df4efac5');
+        localStorage.setItem('tenantId', 'fd739188-bda8-4707-85a8-14401a36062c');
 
         // verificar se existe token no locaStorage, caso tenha retornar true, senão, consultar a empresa novamente e
         // salvar o localStage novamente após a consulta
