@@ -5,5 +5,8 @@ export const environment = {
     // apiUrl: 'http://localhost:8888/api/v1'
     // apiUrl: 'https://contify.herokuapp.com/v1'
     //
-    apiUrl: 'https://contify.herokuapp.com/v1'
+
+    // apiUrl: 'https://contify.herokuapp.com/v1'
+
+    apiUrl: 'https://app.contify.com.br/contify/v1'
 };
