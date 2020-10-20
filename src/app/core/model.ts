@@ -13,3 +13,7 @@ export class Employee {
     endTimeSaturday: string;
 }
 
+export class UserToken {
+    id: number;
+    token: string;
+}

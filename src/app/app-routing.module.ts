@@ -1,23 +1,41 @@
-import { TenantGuardService } from './tenant-guard.service';
+import { NotAuthorizedComponent } from './core/not-authorized.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'visao-geral', pathMatch: 'full' },
-
     {
-        // path: 'funcionarios',
-        // loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
-
-        path: ':tenantId/funcionarios',
-        loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule),
-        canActivate: [TenantGuardService]
+        path: '',
+        redirectTo: 'visao-geral',
+        pathMatch: 'full'
     },
-
-    { path: 'visao-geral', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
-    { path: 'contrato-social', loadChildren: () => import('./social-contract/social-contract.module').then(m => m.SocialContractModule) },
-    { path: 'relatorios', loadChildren: () => import('./report/report.module').then(m => m.ReportModule) },
-    { path: '**', redirectTo: 'visao-geral' }
+    {
+        path: 'nao-autorizado',
+        component: NotAuthorizedComponent
+    },
+    {
+        path: 'funcionarios',
+        loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
+    },
+    {
+        path: 'external_login_token/access_url/:token',
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+    },
+    {
+        path: 'visao-geral',
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+    },
+    {
+        path: 'contrato-social',
+        loadChildren: () => import('./social-contract/social-contract.module').then(m => m.SocialContractModule)
+    },
+    {
+        path: 'relatorios',
+        loadChildren: () => import('./report/report.module').then(m => m.ReportModule)
+    },
+    {
+        path: '**',
+        redirectTo: 'visao-geral'
+    }
 ];
 
 @NgModule({

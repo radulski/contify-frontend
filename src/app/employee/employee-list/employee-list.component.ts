@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class EmployeeListComponent implements OnInit {
     employees = [];
     tenantId: string;
+    totalRecords = 0;
 
     constructor(
         private employeeService: EmployeeService,
@@ -24,8 +25,9 @@ export class EmployeeListComponent implements OnInit {
 
     pesquisar(): void {
         this.employeeService.pesquisar()
-            .then(employees =>
-                this.employees = employees
-            );
+            .then(resultado => {
+                this.employees = resultado.employees;
+                this.totalRecords = resultado.total;
+            });
     }
 }

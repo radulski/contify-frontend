@@ -10294,6 +10294,14 @@ html{
  .select2-container--bootstrap{
   width:100%!important
 }
+
+@font-face {
+    font-family: 'proxima-nova';
+    src: url('fonts/ProximaNova-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @font-face{
   font-family:Material Icons;
   font-style:normal;
@@ -11302,7 +11310,7 @@ html{
   }
 }
  .container, .container--max{
-  max-width:940px
+  max-width:1040px
 }
  .container--max.container--wide{
   max-width:940px!important
@@ -11405,7 +11413,7 @@ html{
   background:#fff;
   padding:0 10px
 }
- .card{
+.card{
   /*margin-bottom:1.25rem;*/
 }
  .card .card, .card.card-subtotals ul{

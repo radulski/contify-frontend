@@ -1,3 +1,4 @@
+import { AuthGuard } from './../security/auth.guard';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -5,9 +6,21 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 const routes: Routes = [
-    { path: '', component: EmployeeListComponent },
-    { path: ':tenantId/novo', component: EmployeeRegistrationComponent },
-    { path: ':codigo', component: EmployeeRegistrationComponent },
+    {
+        path: '',
+        component: EmployeeListComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'novo',
+        component: EmployeeRegistrationComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: ':codigo',
+        component: EmployeeRegistrationComponent,
+        canActivate: [AuthGuard]
+    },
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import { EmployeeService } from './employee/employee.service';
 import { CoreModule } from './core/core.module';
 import { ToastyModule } from 'ng2-toasty';
 import { AppComponent } from './app.component';
+import { SecurityModule } from './security/security.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     CoreModule,
     HttpClientModule,
     ToastyModule.forRoot(),
+    SecurityModule,
     AppRoutingModule,
     SocialContractModule
   ],

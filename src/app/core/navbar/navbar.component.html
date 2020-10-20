@@ -1,101 +1,3 @@
-<!--
-    <nav class="navbar navbar-expand-md justify-content-center navbar-dark fixed-top bg-primary">
-    <button class="btn btn-link text-white pl-0 d-md-none" type="button" data-toggle="sidebar">
-        <i class="material-icons align-middle md-36">short_text</i>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarProjects">
-        <ul class="navbar-nav">
-            <li style="margin-right: 60px; margin-left: 18px;">
-                <img src="assets/logobranca.png" height="25" alt="" style="margin-top: 4px;">
-            </li>
-
-            <li class="nav-item">
-                <a routerLink="/visao-geral" class="nav-link" style="margin-right: 8px;" aria-expanded="false">
-                    Visão Geral
-                </a>
-            </li>
-
-            <li class="nav-item dropdown nav-dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    Folha de Pagamento
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-account">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a routerLink="/{{tenantId}}/funcionarios" class="dropdown-item">
-                                <span class="align-middle">Gerenciar Funcionários</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="nav-item dropdown nav-dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    Societário
-                </a>
-                <div class="dropdown-menu dropdown-menu-account">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a routerLink="/contrato-social" class="dropdown-item">
-                                <span class="align-middle">Contrato Social</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="dropdown-item">
-                                <span class="align-middle">Documentos do Sócios</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="nav-item dropdown nav-dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    Relatórios
-                </a>
-                <div class="dropdown-menu dropdown-menu-account">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a routerLink="relatorios/balancete" class="dropdown-item">
-                                <span class="align-middle">Balancete</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a routerLink="relatorios/balanco" class="dropdown-item">
-                                <span class="align-middle">Balanço</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a routerLink="relatorios/dre" class="dropdown-item">
-                                <span class="align-middle">DRE</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a routerLink="relatorios/analise-de-resultados" class="dropdown-item">
-                                <span class="align-middle">Análise de Resultados</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <ul class="navbar-nav ml-md-auto">
-            <li class="nav-item">
-                <a href="" class="nav-link"><i class="material-icons">perm_identity</i></a>
-            </li>
-            <li class="nav-item nav-divider"></li>
-            <li class="nav-item">
-                <a style="margin-top: 5px;" href="" class="nav-link">Ajuda</a>
-            </li>
-        </ul>
-    </div>
-</nav>
--->
-
 <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary">
     <a class="navbar-brand" href="#">Rafael Silva</a>
     <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
@@ -114,9 +16,9 @@
                     Folha de Pagamento
                     <i class="fa fa-angle-down"></i>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a routerLink="/{{tenantId}}/funcionarios" class="dropdown-item">
-                        <span class="align-middle">Gerenciar Funcionários</span>
+                <div class="dropdown-menu w3-button" aria-labelledby="dropdown01">
+                    <a routerLink="/funcionarios" class="dropdown-item">
+                        <span class="align-middle">Gerenciar funcionários</span>
                     </a>
                 </div>
             </li>
@@ -126,13 +28,17 @@
                     Societário
                     <i class="fa fa-angle-down"></i>
                 </a>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu w3-button">
                     <a routerLink="/contrato-social" class="dropdown-item">
-                        <span class="align-middle">Contrato Social</span>
+                        <span class="align-middle">Contrato social</span>
                     </a>
 
                     <a href="#" class="dropdown-item">
-                        <span class="align-middle">Documentos do Sócios</span>
+                        <span class="align-middle">Documentos dos sócios</span>
+                    </a>
+
+                    <a href="#" class="dropdown-item">
+                        <span class="align-middle">Consultar lista de sócios</span>
                     </a>
                 </div>
             </li>
@@ -142,7 +48,7 @@
                     Relatórios
                     <i class="fa fa-angle-down"></i>
                 </a>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu w3-button">
                     <a routerLink="relatorios/balancete" class="dropdown-item">
                         <span class="align-middle">Balancete</span>
                     </a>
@@ -156,30 +62,23 @@
                     </a>
 
                     <a routerLink="relatorios/analise-de-resultados" class="dropdown-item">
-                        <span class="align-middle">Análise de Resultados</span>
+                        <span class="align-middle">Análise de resultados</span>
                     </a>
                 </div>
             </li>
         </ul>
 
         <ul class="navbar-nav ml-md-auto">
-            <li class="nav-item">
-                <a href="" class="nav-link"><i class="material-icons">perm_identity</i></a>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false">
+                    <i class="material-icons">perm_identity</i>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right w3-button" aria-labelledby="userMenu">
+                    <a class="dropdown-item" id="logout_btn" href="#">Meus dados</a>
+                    <a class="dropdown-item" id="logout_btn" (click)="logout()" href="javascript:;">Sair</a>
+                </div>
             </li>
-
         </ul>
-
-
-
-
-
-        <!--
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        -->
     </div>
 </nav>
-
-

@@ -10,12 +10,11 @@
 
     <div class="form-row">
         <div class="form-group col-md-8">
-            <div class="btn btn-success" routerLink="/{{tenantId}}/funcionarios/novo">Adicionar Colaborador</div>
+            <div class="btn btn-success" routerLink="/funcionarios/novo">Adicionar Colaborador</div>
         </div>
-
         <div class="form-group col-md-4">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Nome" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input type="text" class="form-control" placeholder="Digite o nome para pesquisar" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-white" type="button">
                         <i class="material-icons md-18 align-middle">search</i>
@@ -25,7 +24,13 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card card-color-default" *ngIf="totalRecords == 0">
+        <div class="card-body">
+          <div class="text-center">Você não possui funcionários cadastrados.</div>
+        </div>
+    </div>
+
+    <div class="card" *ngIf="totalRecords > 0">
         <div class="table-responsive">
             <table class="table table-projects mb-0">
                 <thead>
@@ -71,4 +76,7 @@
             </table>
         </div>
     </div>
+
+    <br>
+
 </div>

@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
+import { LogoutService } from './../../security/logout.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-    tenantId: string;
+    // tenantId: string;
+
+    constructor(
+        private logoutService: LogoutService,
+        private router: Router
+    ) {}
 
     ngOnInit(): void {
-        this.tenantId = localStorage.getItem('tenantId');
+        // this.tenantId = localStorage.getItem('tenantId');
+    }
+
+    logout(): any {
+        this.logoutService.logout()
+            .then(() => {
+                this.router.navigate(['/login']);
+            }).
+            catch(erro => 'erro');
     }
 }

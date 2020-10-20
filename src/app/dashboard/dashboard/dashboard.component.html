@@ -1,4 +1,5 @@
 <div class="container mt-0 pb-3">
+
     <!--
     <div class="form-row p-2">
         <div class="form-group col-md-6">
@@ -6,7 +7,7 @@
                 <h5 class="card-header">
                     Total de Receitas
                 </h5>
-                <div class="card-body">
+                <div class="card-body text-center">
                     R$ 10.050,00
                 </div>
             </div>
@@ -17,23 +18,39 @@
                 <h5 class="card-header">
                     Total de Despesas
                 </h5>
-                <div class="card-body">
+                <div class="card-body text-center">
                     R$ 3.590,00
                 </div>
             </div>
         </div>
     </div>
-    -->
+-->
+
 
     <div class="form-row p-2">
         <div class="form-group col-md-12">
             <div class="card">
                 <h5 class="card-header">
-                    Lançamentos por mês
+                    Gráfico de Receitas
                 </h5>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
-                        <p-chart type="bar" [data]="data"></p-chart>
+                        <p-chart type="bar" height="230px" [data]="data" [options]="options"></p-chart>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row p-2">
+        <div class="form-group col-md-12">
+            <div class="card">
+                <h5 class="card-header">
+                    Lançamentos Mensal
+                </h5>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p-chart type="line" height="230px" [data]="lineData" [options]="lineOptions"></p-chart>
                     </blockquote>
                 </div>
             </div>

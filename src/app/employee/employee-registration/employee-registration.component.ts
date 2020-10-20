@@ -47,7 +47,7 @@ export class EmployeeRegistrationComponent implements OnInit {
             .then(() => {
                 // console.log('lançamento adicionado com sucesso');
                 this.toasty.success('Funcionário adicionado com sucesso!');
-                this.router.navigate(['/{{tenantId}}/funcionarios']);
+                this.router.navigate(['/funcionarios']);
                 // form.reset();
                 // this.employee = new Employee();
             });

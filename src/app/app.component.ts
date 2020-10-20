@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ToastyConfig } from '../../node_modules/ng2-toasty';
+import { Router } from '../../node_modules/@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -9,7 +10,14 @@ import { ToastyConfig } from '../../node_modules/ng2-toasty';
 export class AppComponent {
     title = 'contify-ui';
 
-    constructor(private toastyConfig: ToastyConfig) {
+    constructor(
+        private toastyConfig: ToastyConfig,
+        private router: Router
+    ) {
         this.toastyConfig.theme = 'bootstrap';
+    }
+
+    navBarDisplays(): any {
+        return this.router.url !== '/login';
     }
 }
